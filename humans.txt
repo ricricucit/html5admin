@@ -3,13 +3,13 @@
 
 
 /* TEAM */
-  <your title>: <your name>
-  Site: 
-  Twitter: 
-  Location: 
+  html5 admin Creator: Enrico Icardi
+  Site: http://www.aboutme.it
+  Twitter: ricricucit
+  Location: Torino 
 
 /* THANKS */
-  Names (& URL): 
+  Names (& URL): Nathan Smith and its 960 Grid, Stephen Bau and it's 960gs fluid Joel Birch and its superfish menu, jQuery community, New Gold Leaf and their fluid grid, Jörn Zaefferer for the treeview plugin, Drew Diller for PNG fix, Allan Jardine for the DataTables plugin, Brian Cherne for the hoverIntent plugin
 
 /* SITE */
   Standards: HTML5, CSS3
