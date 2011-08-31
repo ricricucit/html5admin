@@ -1,0 +1,857 @@
+<!doctype html>
+<!--[if lt IE 7 ]> <html lang="en" class="no-js ie6"> <![endif]--><!--[if IE 7 ]>    <html lang="en" class="no-js ie7"> <![endif]--><!--[if IE 8 ]>    <html lang="en" class="no-js ie8"> <![endif]--><!--[if IE 9 ]>    <html lang="en" class="no-js ie9"> <![endif]--><!--[if (gt IE 9)|!(IE)]><!--> <html lang="en" class="no-js"> <!--<![endif]--><head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	
+	<title>Html5 Admin Template for Backend - A larger layout</title>
+	<meta name="description" content="">
+	<meta name="author" content="">
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<link rel="shortcut icon" href="/favicon.ico">
+	<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+	<link rel="stylesheet" href="css/style.css?v=2">
+	
+	<!-- fluid 960 -->
+	<link rel="stylesheet" type="text/css" href="css/text.css" media="screen" />
+	<link rel="stylesheet" type="text/css" href="css/layout.css" media="screen" />
+	<link rel="stylesheet" type="text/css" href="css/grid.css" media="screen" />
+	<!-- superfish menu -->
+	<link rel="stylesheet" type="text/css" href="css/superfish.css" media="screen" />
+	<!-- tags css -->
+	<link rel="stylesheet" href="css/jquery.tagsinput.css">
+	<!-- treeview css -->
+	<link rel="stylesheet" href="css/jquery.treeview.css">
+	<!-- dataTable css -->
+	<link rel="stylesheet" href="css/demo_table_jui.css">
+
+
+	<!-- fluid GS -->
+	<link rel="stylesheet" type="text/css" href="css/fluid.gs.css" media="screen" />
+	<!--[if lt IE 8 ]>
+	<link rel="stylesheet" type="text/css" href="css/fluid.gs.lt_ie8.css" media="screen" />
+	<![endif]-->
+
+	<!-- //jqueryUI css -->
+	<link type="text/css" href="css/custom-theme/jquery-ui-1.8.13.custom.css" rel="stylesheet" />
+	
+	<!-- //jquery -->
+	<!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script> -->
+	<script src="js/libs/jquery-1.5.1.min.js"></script>
+	<script>!window.jQuery && document.write(unescape('%3Cscript src="js/libs/jquery-1.5.1.min.js"%3E%3C/script%3E'))</script>
+	<!-- //jqueryUI -->
+	<script type="text/javascript" src="js/jquery-ui-1.8.13.custom.min.js"></script>
+	<script type="text/javascript" src="js/jquery-fluid16.js"></script>
+	<script src="js/plugins.js"></script>
+	<script src="js/script.js"></script>
+	
+	<!-- //xoxco tags plugin https://github.com/xoxco/jQuery-Tags-Input -->
+	<script src="js/jquery.tagsinput.min.js"></script>
+	<link rel="stylesheet" href="css/jquery.tagsinput.css">
+	
+	<!--[if lt IE 7 ]>
+	<script src="js/libs/dd_belatedpng.js"></script>
+	<script> DD_belatedPNG.fix('img, .png_bg');</script>
+	<![endif]-->
+	<!-- modernizr -->
+	<script src="js/libs/modernizr-1.7.min.js"></script>
+	
+	<!-- superfish menu and needed js for menu -->
+	<script src="js/superfish.js"></script>
+	<script src="js/supersubs.js"></script>
+	<script src="js/hoverIntent.js"></script>
+
+	<!-- treeview -->
+	<script src="js/jquery.treeview.js"></script>
+	
+	<!-- dataTable -->
+	<script src="js/jquery.dataTables.min.js"></script>
+
+
+	<script type="text/javascript">
+		$(function(){
+
+			
+			//treeview for inner menus
+			$("#browser").treeview({
+				toggle: function() {
+					console.log("%s was toggled.", $(this).find(">span").text());
+				}
+			});
+			
+			// menu superfish
+			$('#navigationTop').superfish();
+			
+			// tags
+			$("#tags_input").tagsInput();
+			
+			// dataTable
+			var uTable = $('#example').dataTable( {
+				"sScrollY": 200,
+				"bJQueryUI": true,
+				"sPaginationType": "full_numbers"
+			} );
+			$(window).bind('resize', function () {
+				uTable.fnAdjustColumnSizing();
+			} );
+			
+
+			// Accordion
+			$("#accordion").accordion({ header: "h3" });
+
+			// Accordion2
+			$("#accordion2").accordion({ header: "h3" });
+
+			// Tabs
+			$('#tabs').tabs();
+			$('#tabsOut').tabs();
+
+
+			// Dialog			
+			$('#dialog').dialog({
+				autoOpen: false,
+				width: 600,
+				buttons: {
+					"Ok": function() { 
+						$(this).dialog("close"); 
+					}, 
+					"Cancel": function() { 
+						$(this).dialog("close"); 
+					} 
+				}
+			});
+			
+			// Dialog Link
+			$('#dialog_link').click(function(){
+				$('#dialog').dialog('open');
+				return false;
+			});
+
+			// Datepicker
+			$('#datepicker').datepicker({
+				inline: true
+			});
+			
+			// Slider
+			$('#slider').slider({
+				range: true,
+				values: [17, 67]
+			});
+			
+			// Progressbar
+			$("#progressbar").progressbar({
+				value: 20 
+			});
+			
+			//hover states on the static widgets
+			$('#dialog_link, ul#icons li').hover(
+				function() { $(this).addClass('ui-state-hover'); }, 
+				function() { $(this).removeClass('ui-state-hover'); }
+			);
+			
+		});
+	</script>
+</head>
+<body>
+	<div class="container_16">
+		<header>
+			<div class="grid_16">
+				<h1 id="branding">
+					<a href="../../../">Fluid 960 Grid System</a>
+				</h1>
+			</div>
+			<div class="clear"></div>
+			<div class="grid_16">
+				<ul class="sf-menu" id="navigationTop">
+					<li class="selected">
+						<a href="../../../12/">Fluid 12-column</a>
+						<ul>
+							<li><a href="#">test</a></li>
+							<li>
+								<a href="#">menu</a>
+								<ul>
+									<li><a href="#">test with a lot of text</a></li>
+									<li><a href="#">menu</a></li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<a href="../../../16/">Fluid 16-column</a>
+					</li>
+					<li>
+						<a href="../../../12/fixed/">Fixed 12-column</a>
+					</li>
+					<li>
+						<a href="../../../16/fixed/">Fixed 16-column</a>
+					</li>
+					<li class="secondary">
+						<a href="http://960.gs/" title="960.gs | A CSS grid system developed by Nathan Smith">The 960 Grid System</a>
+					</li>
+				</ul>
+			</div>
+			<div class="clear"></div>
+			<div class="grid_4">
+				<div class="boxSpecial">
+					<h2>
+						<a href="#" id="toggle-navigator">More navigation stuff...</a>
+					</h2>
+					<div id="navigator">
+						<ul id="browser" class="filetree treeview-famfamfam">
+							<li><span class="folder">User</span>
+								<ul>
+									<li class="closed"><span class="folder">Guides</span>
+										<ul>
+											<li><span class="file"><a href="#">User Guide</a></span></li>
+										</ul>
+									</li>
+									<li class="closed"><span class="folder">Privacy & Conditions</span>
+										<ul>
+											<li class="closed"><span class="folder">Privacy</span>
+												<ul id="folder21">
+													<li><span class="file"><a href="#">Privacy policies texts (DE/EN)</a></span></li>
+													<li><span class="file"><a href="#">Privacy general texts (DE/EN)</a></span></li>
+												</ul>
+											</li>
+											<li class="closed"><span class="folder">Terms & Conditions</span>
+												<ul>
+													<li><span class="file"><a href="#">Terms texts (DE/EN)</a></span></li>
+													<li><span class="file"><a href="#">Condition texts (DE/EN)</a></span></li>
+												</ul>
+											</li>
+										</ul>
+									</li>
+									<li class="closed"><span class="folder">Revocation Rights</span>
+										<ul>
+											<li><span class="file"><a href="#">Revocation texts (DE/EN)</a></span></li>
+										</ul>
+									</li>
+									<li><span class="file"><a href="#">General User Text Message</a></span></li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="grid_12">
+				<h2 id="page-crumbs">Templates &raquo; User &raquo; <span class="here">User Name</span></h2>
+			</div>
+			<div class="clear"></div>
+		</header>
+
+		<div id="main" role="main">
+			<div id="content">		
+				<div class="grid_4">
+					<h2 id="page-heading-left">Large Layout</h2>
+					<h5 id="page-sub-heading-left">This is a larger layout and this is a subtitle</h5>
+				</div>
+				<div class="grid_12">
+					<div class="box">
+						<h2>
+							<a href="#" id="toggle-list">List of Users</a>
+						</h2>
+						<div class="block" id="list">					
+						<table cellpadding="0" cellspacing="0" border="0" class="display" id="example">
+							<thead>
+								<tr>
+									<th>Rendering engine</th>
+									<th>Browser</th>
+									<th>Platform(s)</th>
+									<th>Engine version</th>
+									<th width="12%">CSS grade</th>
+								</tr>
+							</thead>
+							<tfoot>
+								<tr>
+									<th>Rendering engine</th>
+									<th>Browser</th>
+									<th>Platform(s)</th>
+									<th>Engine version</th>
+									<th>CSS grade</th>
+								</tr>
+							</tfoot>
+							<tbody>
+								<tr class="odd gradeX">
+									<td>Trident</td>
+									<td>Internet
+										 Explorer 4.0</td>
+									<td>Win 95+</td>
+									<td class="center">4</td>
+									<td class="center">X</td>
+								</tr>
+								<tr class="odd gradeC">
+									<td>Trident</td>
+									<td>Internet
+										 Explorer 5.0</td>
+									<td>Win 95+</td>
+									<td class="center">5</td>
+									<td class="center">C</td>
+								</tr>
+								<tr class="odd gradeA">
+									<td>Trident</td>
+									<td>Internet
+										 Explorer 5.5</td>
+									<td>Win 95+</td>
+									<td class="center">5.5</td>
+									<td class="center">A</td>
+								</tr>
+								<tr class="odd gradeA">
+									<td>Trident</td>
+									<td>Internet
+										 Explorer 6</td>
+									<td>Win 98+</td>
+									<td class="center">6</td>
+									<td class="center">A</td>
+								</tr>
+								<tr class="odd gradeA">
+									<td>Trident</td>
+									<td>Internet Explorer 7</td>
+									<td>Win XP SP2+</td>
+									<td class="center">7</td>
+									<td class="center">A</td>
+								</tr>
+								<tr class="odd gradeA">
+									<td>Trident</td>
+									<td>AOL browser (AOL desktop)</td>
+									<td>Win XP</td>
+									<td class="center">6</td>
+									<td class="center">A</td>
+								</tr>
+								<tr class="gradeA">
+									<td>Gecko</td>
+									<td>Firefox 1.0</td>
+									<td>Win 98+ / OSX.2+</td>
+									<td class="center">1.7</td>
+									<td class="center">A</td>
+								</tr>
+								<tr class="gradeA">
+									<td>Gecko</td>
+									<td>Firefox 1.5</td>
+									<td>Win 98+ / OSX.2+</td>
+									<td class="center">1.8</td>
+									<td class="center">A</td>
+								</tr>
+								<tr class="gradeA">
+									<td>Gecko</td>
+									<td>Firefox 2.0</td>
+									<td>Win 98+ / OSX.2+</td>
+									<td class="center">1.8</td>
+									<td class="center">A</td>
+								</tr>
+								<tr class="gradeA">
+									<td>Gecko</td>
+									<td>Firefox 3.0</td>
+									<td>Win 2k+ / OSX.3+</td>
+									<td class="center">1.9</td>
+									<td class="center">A</td>
+								</tr>
+								<tr class="gradeA">
+									<td>Gecko</td>
+									<td>Camino 1.0</td>
+									<td>OSX.2+</td>
+									<td class="center">1.8</td>
+									<td class="center">A</td>
+								</tr>
+								<tr class="gradeA">
+									<td>Gecko</td>
+									<td>Camino 1.5</td>
+									<td>OSX.3+</td>
+									<td class="center">1.8</td>
+									<td class="center">A</td>
+								</tr>
+								<tr class="gradeA">
+									<td>Gecko</td>
+									<td>Netscape 7.2</td>
+									<td>Win 95+ / Mac OS 8.6-9.2</td>
+									<td class="center">1.7</td>
+									<td class="center">A</td>
+								</tr>
+								<tr class="gradeA">
+									<td>Gecko</td>
+									<td>Netscape Browser 8</td>
+									<td>Win 98SE+</td>
+									<td class="center">1.7</td>
+									<td class="center">A</td>
+								</tr>
+								<tr class="gradeA">
+									<td>Gecko</td>
+									<td>Netscape Navigator 9</td>
+									<td>Win 98+ / OSX.2+</td>
+									<td class="center">1.8</td>
+									<td class="center">A</td>
+								</tr>
+								<tr class="gradeA">
+									<td>Gecko</td>
+									<td>Mozilla 1.0</td>
+									<td>Win 95+ / OSX.1+</td>
+									<td class="center">1</td>
+									<td class="center">A</td>
+								</tr>
+								<tr class="gradeA">
+									<td>Gecko</td>
+									<td>Mozilla 1.1</td>
+									<td>Win 95+ / OSX.1+</td>
+									<td class="center">1.1</td>
+									<td class="center">A</td>
+								</tr>
+								<tr class="gradeA">
+									<td>Gecko</td>
+									<td>Mozilla 1.2</td>
+									<td>Win 95+ / OSX.1+</td>
+									<td class="center">1.2</td>
+									<td class="center">A</td>
+								</tr>
+								<tr class="gradeA">
+									<td>Gecko</td>
+									<td>Mozilla 1.3</td>
+									<td>Win 95+ / OSX.1+</td>
+									<td class="center">1.3</td>
+									<td class="center">A</td>
+								</tr>
+								<tr class="gradeA">
+									<td>Gecko</td>
+									<td>Mozilla 1.4</td>
+									<td>Win 95+ / OSX.1+</td>
+									<td class="center">1.4</td>
+									<td class="center">A</td>
+								</tr>
+								<tr class="gradeA">
+									<td>Gecko</td>
+									<td>Mozilla 1.5</td>
+									<td>Win 95+ / OSX.1+</td>
+									<td class="center">1.5</td>
+									<td class="center">A</td>
+								</tr>
+								<tr class="gradeA">
+									<td>Gecko</td>
+									<td>Mozilla 1.6</td>
+									<td>Win 95+ / OSX.1+</td>
+									<td class="center">1.6</td>
+									<td class="center">A</td>
+								</tr>
+								<tr class="gradeA">
+									<td>Gecko</td>
+									<td>Mozilla 1.7</td>
+									<td>Win 98+ / OSX.1+</td>
+									<td class="center">1.7</td>
+									<td class="center">A</td>
+								</tr>
+								<tr class="gradeA">
+									<td>Gecko</td>
+									<td>Mozilla 1.8</td>
+									<td>Win 98+ / OSX.1+</td>
+									<td class="center">1.8</td>
+									<td class="center">A</td>
+								</tr>
+								<tr class="gradeA">
+									<td>Gecko</td>
+									<td>Seamonkey 1.1</td>
+									<td>Win 98+ / OSX.2+</td>
+									<td class="center">1.8</td>
+									<td class="center">A</td>
+								</tr>
+								<tr class="gradeA">
+									<td>Gecko</td>
+									<td>Epiphany 2.20</td>
+									<td>Gnome</td>
+									<td class="center">1.8</td>
+									<td class="center">A</td>
+								</tr>
+								<tr class="gradeA">
+									<td>Webkit</td>
+									<td>Safari 1.2</td>
+									<td>OSX.3</td>
+									<td class="center">125.5</td>
+									<td class="center">A</td>
+								</tr>
+								<tr class="gradeA">
+									<td>Webkit</td>
+									<td>Safari 1.3</td>
+									<td>OSX.3</td>
+									<td class="center">312.8</td>
+									<td class="center">A</td>
+								</tr>
+								<tr class="gradeA">
+									<td>Webkit</td>
+									<td>Safari 2.0</td>
+									<td>OSX.4+</td>
+									<td class="center">419.3</td>
+									<td class="center">A</td>
+								</tr>
+								<tr class="gradeA">
+									<td>Webkit</td>
+									<td>Safari 3.0</td>
+									<td>OSX.4+</td>
+									<td class="center">522.1</td>
+									<td class="center">A</td>
+								</tr>
+								<tr class="gradeA">
+									<td>Webkit</td>
+									<td>OmniWeb 5.5</td>
+									<td>OSX.4+</td>
+									<td class="center">420</td>
+									<td class="center">A</td>
+								</tr>
+								<tr class="gradeA">
+									<td>Webkit</td>
+									<td>iPod Touch / iPhone</td>
+									<td>iPod</td>
+									<td class="center">420.1</td>
+									<td class="center">A</td>
+								</tr>
+								<tr class="gradeA">
+									<td>Webkit</td>
+									<td>S60</td>
+									<td>S60</td>
+									<td class="center">413</td>
+									<td class="center">A</td>
+								</tr>
+								<tr class="gradeA">
+									<td>Presto</td>
+									<td>Opera 7.0</td>
+									<td>Win 95+ / OSX.1+</td>
+									<td class="center">-</td>
+									<td class="center">A</td>
+								</tr>
+								<tr class="gradeA">
+									<td>Presto</td>
+									<td>Opera 7.5</td>
+									<td>Win 95+ / OSX.2+</td>
+									<td class="center">-</td>
+									<td class="center">A</td>
+								</tr>
+								<tr class="gradeA">
+									<td>Presto</td>
+									<td>Opera 8.0</td>
+									<td>Win 95+ / OSX.2+</td>
+									<td class="center">-</td>
+									<td class="center">A</td>
+								</tr>
+								<tr class="gradeA">
+									<td>Presto</td>
+									<td>Opera 8.5</td>
+									<td>Win 95+ / OSX.2+</td>
+									<td class="center">-</td>
+									<td class="center">A</td>
+								</tr>
+								<tr class="gradeA">
+									<td>Presto</td>
+									<td>Opera 9.0</td>
+									<td>Win 95+ / OSX.3+</td>
+									<td class="center">-</td>
+									<td class="center">A</td>
+								</tr>
+								<tr class="gradeA">
+									<td>Presto</td>
+									<td>Opera 9.2</td>
+									<td>Win 88+ / OSX.3+</td>
+									<td class="center">-</td>
+									<td class="center">A</td>
+								</tr>
+								<tr class="gradeA">
+									<td>Presto</td>
+									<td>Opera 9.5</td>
+									<td>Win 88+ / OSX.3+</td>
+									<td class="center">-</td>
+									<td class="center">A</td>
+								</tr>
+								<tr class="gradeA">
+									<td>Presto</td>
+									<td>Opera for Wii</td>
+									<td>Wii</td>
+									<td class="center">-</td>
+									<td class="center">A</td>
+								</tr>
+								<tr class="gradeA">
+									<td>Presto</td>
+									<td>Nokia N800</td>
+									<td>N800</td>
+									<td class="center">-</td>
+									<td class="center">A</td>
+								</tr>
+								<tr class="gradeA">
+									<td>Presto</td>
+									<td>Nintendo DS browser</td>
+									<td>Nintendo DS</td>
+									<td class="center">8.5</td>
+									<td class="center">C/A<sup>1</sup></td>
+								</tr>
+								<tr class="gradeC">
+									<td>KHTML</td>
+									<td>Konqureror 3.1</td>
+									<td>KDE 3.1</td>
+									<td class="center">3.1</td>
+									<td class="center">C</td>
+								</tr>
+								<tr class="gradeA">
+									<td>KHTML</td>
+									<td>Konqureror 3.3</td>
+									<td>KDE 3.3</td>
+									<td class="center">3.3</td>
+									<td class="center">A</td>
+								</tr>
+								<tr class="gradeA">
+									<td>KHTML</td>
+									<td>Konqureror 3.5</td>
+									<td>KDE 3.5</td>
+									<td class="center">3.5</td>
+									<td class="center">A</td>
+								</tr>
+								<tr class="gradeX">
+									<td>Tasman</td>
+									<td>Internet Explorer 4.5</td>
+									<td>Mac OS 8-9</td>
+									<td class="center">-</td>
+									<td class="center">X</td>
+								</tr>
+								<tr class="gradeC">
+									<td>Tasman</td>
+									<td>Internet Explorer 5.1</td>
+									<td>Mac OS 7.6-9</td>
+									<td class="center">1</td>
+									<td class="center">C</td>
+								</tr>
+								<tr class="gradeC">
+									<td>Tasman</td>
+									<td>Internet Explorer 5.2</td>
+									<td>Mac OS 8-X</td>
+									<td class="center">1</td>
+									<td class="center">C</td>
+								</tr>
+								<tr class="gradeA">
+									<td>Misc</td>
+									<td>NetFront 3.1</td>
+									<td>Embedded devices</td>
+									<td class="center">-</td>
+									<td class="center">C</td>
+								</tr>
+								<tr class="gradeA">
+									<td>Misc</td>
+									<td>NetFront 3.4</td>
+									<td>Embedded devices</td>
+									<td class="center">-</td>
+									<td class="center">A</td>
+								</tr>
+								<tr class="gradeX">
+									<td>Misc</td>
+									<td>Dillo 0.8</td>
+									<td>Embedded devices</td>
+									<td class="center">-</td>
+									<td class="center">X</td>
+								</tr>
+								<tr class="gradeX">
+									<td>Misc</td>
+									<td>Links</td>
+									<td>Text only</td>
+									<td class="center">-</td>
+									<td class="center">X</td>
+								</tr>
+								<tr class="gradeX">
+									<td>Misc</td>
+									<td>Lynx</td>
+									<td>Text only</td>
+									<td class="center">-</td>
+									<td class="center">X</td>
+								</tr>
+								<tr class="gradeC">
+									<td>Misc</td>
+									<td>IE Mobile</td>
+									<td>Windows Mobile 6</td>
+									<td class="center">-</td>
+									<td class="center">C</td>
+								</tr>
+								<tr class="gradeC">
+									<td>Misc</td>
+									<td>PSP browser</td>
+									<td>PSP</td>
+									<td class="center">-</td>
+									<td class="center">C</td>
+								</tr>
+								<tr class="gradeU">
+									<td>Other browsers</td>
+									<td>All others</td>
+									<td>-</td>
+									<td class="center">-</td>
+									<td class="center">U</td>
+								</tr>
+							</tbody>
+						</table>
+						</div>
+
+
+					</div>
+				</div>				
+				
+				<div class="grid_4">
+					<h5 id="page-sub-heading-left"><strong>What if there was no white box here?</strong></h5>
+					
+					<p>
+						A paragraph could be used without a box...to build an inline help for backEnd Users!
+					</p>
+					<ul>
+						<li>A list</li>
+						<li>Without a containing box</li>
+						<li>Could be Userful</li>
+					</ul>
+					
+					<fieldset>
+						<legend>Inline Help</legend>
+						<ul>
+							<li>Select "A" for "A Class"</li>
+							<li>Selecting a country is mandatory</li>
+							<li>Scream if you're angry, it makes you feel better. This is a long line of help...</li>
+							<li>Be gentle</li>
+						</ul>						
+					</fieldset>				
+				</div>
+				
+				
+				
+				<div class="grid_12">
+					<div class="box">
+						<h2>
+							<a href="#" id="toggle-articles">Overview</a>
+						</h2>
+						<div class="block" id="articles">
+							<div class="first article">
+								  <div class="sixteen_column section">
+								    <div class="sixteen column">
+								      <div class="column_content">
+										<a href="#" class="image">
+											<img src="img/photo_60x60.jpg" width="60" height="60" alt="photo" />
+										</a>
+										<h3>
+											<a href="#">User Name</a>
+										</h3>
+										<h4>ADMINISTRATOR</h4>
+										<p class="meta">Vancouver, BC — Registered since: Wednesday, 23 April 2008</p>
+								  	  </div>
+								  	</div>
+								  </div>
+								  <div class="sixteen_column section">
+								    <div class="five column">
+								      <div class="column_content">
+								       		<strong>Five column</strong><br/>
+											Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod
+											tincidunt ut laoreet dolore magna aliquam erat volutpat.
+											<br/><br/>
+											<a href="#">Visit site.</a>
+								      </div>
+								    </div>
+								    <div class="eleven column">
+								      <div class="column_content">
+											<strong>Eleven column</strong><br/>
+											Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod
+											tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, 
+											quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod
+											tincidunt ut uam erat volutpat. Ut wisi enim ad minim veniam, 
+											quis nostrud exerci <a href="#">tationullamcorper suscipit lobortis nisl</a> ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod
+											tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod
+											tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, 
+											quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
+											quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. 
+											<br/><br/>
+									  </div>
+									</div>
+								  </div>
+								<div class="clear"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<div class="grid_4">
+					<div class="box">
+						<h2>
+							<a href="#" id="toggle-list-items">List Items</a>
+						</h2>
+						<div class="block" id="list-items">
+							<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod. </p>
+							<h5>A menu</h5>
+							<ul class="menu">
+								<li>
+									<a href="#">Item 1</a>
+								</li>
+								<li>
+									<a href="#">Item 2</a>
+								</li>
+								<li>
+									<a href="#">Item 3</a>
+								</li>
+							</ul>
+							<h5>An unordered list</h5>
+							<ul>
+								<li>
+									<a href="#">Item 1</a>
+								</li>
+								<li>
+									<a href="#">Item 2</a>
+								</li>
+								<li>
+									<a href="#">Item 3</a>
+								</li>
+							</ul>
+							<h5>An ordered list</h5>
+							<ol>
+								<li>
+									<a href="#">Item 1</a>
+								</li>
+								<li>
+									<a href="#">Item 2</a>
+								</li>
+								<li>
+									<a href="#">Item 3</a>
+								</li>
+							</ol>
+						</div>
+					</div>
+				</div>
+				<div class="grid_12">
+					<div class="box">
+						<h2>
+							<a href="#" id="toggle-list-items">Tabs in a box</a>
+						</h2>
+						<div id="tabs">
+							<ul>
+								<li><a href="#tabs-1">First</a></li>
+								<li><a href="#tabs-2">Second</a></li>
+								<li><a href="#tabs-3">Third</a></li>
+							</ul>
+							<div id="tabs-1">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+							<div id="tabs-2">Phasellus mattis tincidunt nibh. Cras orci urna, blandit id, pretium vel, aliquet ornare, felis. Maecenas scelerisque sem non nisl. Fusce sed lorem in enim dictum bibendum.</div>
+							<div id="tabs-3">Nam dui erat, auctor a, dignissim quis, sollicitudin eu, felis. Pellentesque nisi urna, interdum eget, sagittis et, consequat vestibulum, lacus. Mauris porttitor ullamcorper augue.</div>
+						</div>
+					</div>
+				</div>
+				
+				<div class="grid_12">
+						<h2>
+							<a href="#" id="toggle-list-items">Tabs out the box in a 12 columns space</a>
+						</h2>
+						<div id="tabsOut">
+							<ul>
+								<li><a href="#tabs-1">First</a></li>
+								<li><a href="#tabs-2">Second</a></li>
+								<li><a href="#tabs-3">Third</a></li>
+							</ul>
+							<div id="tabs-1">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+							<div id="tabs-2">Phasellus mattis tincidunt nibh. Cras orci urna, blandit id, pretium vel, aliquet ornare, felis. Maecenas scelerisque sem non nisl. Fusce sed lorem in enim dictum bibendum.</div>
+							<div id="tabs-3">Nam dui erat, auctor a, dignissim quis, sollicitudin eu, felis. Pellentesque nisi urna, interdum eget, sagittis et, consequat vestibulum, lacus. Mauris porttitor ullamcorper augue.</div>
+						</div>
+				</div>
+				
+				</div>
+				<div class="clear"></div>
+				
+
+		<footer>
+			<div class="grid_16" id="site_info">
+				<div class="box">
+					<p>html5Admin - <a href="http://www.html5admin.com">Your Free HTML5 ready backEnd</a></p>
+				</div>
+			</div>
+			<div class="clear"></div>
+		</footer>
+	</div></body>
+</html>

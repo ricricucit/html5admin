@@ -1,0 +1,44 @@
+/*
+ *
+ * everything here take inspiration from:
+ *
+ */
+
+
+
+/*
+ * Fluid Grid System
+ * http://fluid.gs/
+ * http://fluid.newgoldleaf.com/
+ *
+ * Copyright (c) 2009 Joseph Silvashy and New Gold Leaf LP
+ * Licensed under the MIT, GPL, and CC licenses.
+ *
+ * Date: 2009-06-22 (Mon, 22 Jun 2009)
+ * Revision: 3
+ *
+ * Modifications and fixes made from:
+ * http://meyerweb.com/eric/tools/css/reset/
+ * http://code.google.com/p/blueprintcss/
+ */
+
+/* .section and .column are required in your HTML */
+div.section {display:table; width:100%; border-collapse:collapse;}
+div.column {display: table-cell; padding:5px;}
+
+div.sixteen_column.section div.one {width:6%;}
+div.sixteen_column.section div.two {width:12%;}
+div.sixteen_column.section div.three {width:18%;}
+div.sixteen_column.section div.four {width:24%;}
+div.sixteen_column.section div.five {width:30%;}
+div.sixteen_column.section div.six {width:36%;}
+div.sixteen_column.section div.seven {width:42%;}
+div.sixteen_column.section div.eight {width:48%;}
+div.sixteen_column.section div.nine {width:54%;}
+div.sixteen_column.section div.ten {width:60%;}
+div.sixteen_column.section div.eleven {width:66%;}
+div.sixteen_column.section div.twelve {width:72%;}
+div.sixteen_column.section div.thirteen {width:78%;}
+div.sixteen_column.section div.fourteen {width:84%;}
+div.sixteen_column.section div.fifteen {width:90%;}
+div.sixteen_column.section div.sixteen {width:96%;}
